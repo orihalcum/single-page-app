@@ -1,0 +1,31 @@
+	// Google Fonts
+	@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:600|Hind");
+	
+	/* CORE */
+
+	$header-font: "Source Sans Pro",
+	san-serif;
+	$body-font: "Hind",
+	san-serif;
+	$body-font-size: 17px;
+	
+	/* BACKGROUND AND COLOR VARIABLE  */
+
+	$bg-light: #EFEFEF;
+	$color-primary: #169776;
+	$color-secondary: #13876a;
+	$color-yellow: #d8d6a8; // $color-primary: #3276b2;
+	$color-success: #189d0e;
+	$color-info: #3283ca;
+	$color-warning: #fab830;
+	$color-danger: #ca0813;
+	$color-light: #eee;
+	$color-dark: #333;
+	$color-grey: #999;
+	$color-dark-grey: #777;
+	$color-white: #FFF;
+	/* END OF COLOR VAR */
+
+	$footer-height: auto;
+	$footer-padding: 15px 0px;
+	/* RESPONSIVE */

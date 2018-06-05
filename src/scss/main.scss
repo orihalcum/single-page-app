@@ -1,0 +1,34 @@
+/*
+
+	Scratch Bootstrap Saas
+	Author : Dzulfan Fadli
+	Division : DNA Team
+	Version : 0.0.1
+
+*/
+
+
+/*  BASE - Base Styles, variables, mixins, etc  */
+
+@import 'base/_variables.scss';
+@import 'base/_base.scss';
+@import 'base/_mixins.scss';
+@import 'base/_normalize.scss';
+@import 'base/_responsive.scss';
+
+
+/*  MODULES - Individual Site Components  */
+
+@import 'modules/_blocks.scss';
+@import 'modules/_buttons.scss';
+@import 'modules/_components.scss';
+@import 'modules/_sections.scss';
+@import 'modules/_typography.scss';
+@import 'modules/_social_icons.scss';
+
+
+/*  LAYOUT - Page Layout Styles  */
+
+@import 'layouts/_header.scss';
+@import 'layouts/_nav.scss';
+@import 'layouts/_footer.scss';
