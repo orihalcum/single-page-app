@@ -1,8 +1,44 @@
 import Handsontable from 'Handsontable';
 
-$(document).ready(function () {
+var data = [];
 
-    // var $wHeight = $(window).height() - (57 + 80) - 200;
+function renderTable(){
+
+    var getData = (function(){
+        return function () {
+            var page = parseInt(window.location.hash.replace('#', ''), 10) || 1,
+                limit = 25,
+                row = (page - 1) * limit,
+                count = page * limit,
+                part = [];
+
+            for (; row < count; row++) {
+                part.push(data[row]);
+            }
+
+            return part;
+        }
+    })();
+
+    let container = document.getElementById('table');
+    let hot = new Handsontable(container, {
+        data: getData(),
+        colHeaders: ['ID', 'Title', 'Category', 'Tags'],
+        columns: [
+            { data: "id" },
+            { data: "title" },
+            { data: "category.name" },
+            // { data: "contributor.name" },
+            { data: "tags" }
+        ]
+    });
+
+    Handsontable.dom.addEvent(window, 'hashchange', function (event) {
+        hot.loadData(getData());
+    });
+}
+
+$(document).ready(function () {
     
     // Events
 
@@ -25,30 +61,13 @@ $(document).ready(function () {
         $(this).addClass('active');
     });
 
-    // $(window).on('resize', function () {
-    //     $wHeight = $(window).height();
-    //     $('.content-body').height($wHeight);
-    // });
-
     // End of Events
     
-    let url = "https://services.bumntrack.com/api/news/list?limit=40";
+    let url = "https://services.bumntrack.com/api/news/list?limit=100";
 
     $.get(url, function(result){
-
-        let data = result.value;
-        let container = document.getElementById('table');
-        let hot = new Handsontable(container, {
-            data: data,
-            colHeaders: ['ID', 'Title', 'Contributor', 'Tags'],
-            columns: [
-                { data: "id" },
-                { data: "title" },
-                { data: "contributor.name" },
-                { data: "tags" }
-            ]
-        });
-
+        data = result.value;
+        renderTable();
     });
 
 

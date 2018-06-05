@@ -83,7 +83,7 @@
             height: 40px;
             width: 100%;
             div:first-child {
-                padding: 25px;
+                padding: 20px 0 10px;
             }
             .fa {
                 font-size: 28px;
@@ -94,7 +94,17 @@
                 position: absolute;
                 left: 15px;
             }
-            .title {}
+            .pagination {
+                margin: 0;
+                margin-top: 10px;
+                position: absolute;
+                right: 15px;
+                a {
+                    padding: 2.5px 10px;
+                    background-color: $color-dark;
+                    color: $color-white;
+                }
+            }
         }
         .content-table {
             display: table-cell;
